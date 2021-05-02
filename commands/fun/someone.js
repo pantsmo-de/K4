@@ -7,5 +7,4 @@ module.exports = {
 }
 //  var user = client.users.random();
 //                                ^
-//
 //TypeError: Cannot read property 'random' of undefinedv
