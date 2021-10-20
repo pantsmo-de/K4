@@ -1,0 +1,8 @@
+{
+  "dtoken":"Token here",
+  "comdir":"./commands/",
+  "evntdir":"./events/",
+  "prefix": "!",
+  "admin":"Admin role here",
+  "premium":"Premium role here"
+}

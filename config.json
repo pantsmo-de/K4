@@ -1,5 +1,8 @@
 {
   "dtoken":"ODE1MjkzMDY4ODIzNDk0NjU3.YDqS1w.BSst1pbdbsCKgthq6wpK6OPUTVU",
   "comdir":"./commands/",
-  "prefix":"!"
+  "evntdir":"./events/",
+  "prefix": "!",
+  "admin":"711995735763189811",
+  "premium":"894657085520879666"
 }

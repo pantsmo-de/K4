@@ -1,0 +1,4 @@
+# ignore the modules so as to not have too much drag when importing
+/node_modules
+# ignore config.json to avoid leaks
+config.json
