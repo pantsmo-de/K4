@@ -1,9 +1,9 @@
 const {Client,Intents} = require("discord.js");
 const klawSync = require('klaw-sync')
 const path = require('path')
-const decache = require('decache') /* For updating commands live */
-const chalk = require('chalk') /* Ooga booga console log go colorful */
-const open = require('bopen') /* For opening web pages within the self-host side */
+const decache = require('decache')
+const chalk = require('chalk')
+const open = require('bopen')
 const config = require("./config.json")
 const fs = require('fs') /* Just for the event wrapper */
 

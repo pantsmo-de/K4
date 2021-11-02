@@ -1,8 +1,8 @@
-let conn
+/*let conn
 let playing
 const yeet = err => {throw err instanceof Error ? err : new Error(err)}
 module.exports = {
-  async action(msg, args) {
+  async action(msg, args, ytdl) {
     const ytdl = require("ytdl-core");
     const { channel } = msg.member?.voice ?? yeet("cannot join channel")
     const stream = ytdl(args.trim(), { filter : "audioonly" })
@@ -11,6 +11,11 @@ module.exports = {
       .on("finish", () => playing === dispatcher && channel.leave())
   },
   help:"Plays YouTube videos. Suck it, Rythm."
+}*/
+module.exports = {
+  action(msg, args){
+    msg.channel.send("Whoa there, buster! This command is still being fixed! Maybe try another command in the meantime.")
+  }
 }
 /*module.exports = {
   action(msg, args, ytdl){
