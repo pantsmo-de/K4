@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bopen": "^2.6.0",
+    "chalk": "^4.1.2",
+    "decache": "^4.6.0",
+    "discord.js": "^13.3.1",
+    "klaw-sync": "^6.0.0",
+    "request": "^2.88.2"
+  }
+}
