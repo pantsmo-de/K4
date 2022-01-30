@@ -7,7 +7,7 @@ module.exports = {
       .setTitle("Bonk!")
       .setColor('#FF03F6')
       .setDescription('description')
-      .setAuthor("Buh", 'https://cdn.discordapp.com/emojis/765953291535908897.png', 'https://discord.gg/Zmm6Rpt')
+      .setAuthor({name:"Buh", iconURL:'https://cdn.discordapp.com/emojis/765953291535908897.png', URL:'https://discord.gg/Zmm6Rpt'})
       .addField('Bonk!', `<@!${msg.author.id}> bonks <@!${mention.user.id}>.`, true)
       .setImage(bonkGif[Math.floor(Math.random()*bonkGif.length)])
     if (mention !== null) {
