@@ -12,12 +12,12 @@ The name "Buh" comes from an otonomapeia of when you try to say something, but y
 These are general problems that I can't figure out a solution to, because I clearly haven't coded enough, and I am a stupid boy:
 - Reload function needs to delete the list of commands and reload them, after a decache.
 - ``play.js`` needs a channel searcher, which looks up the channel where the message sender is in.
+- In ``bonk.js``, ``8ball.js`` or any other feature that uses embed, only empty messages are sent.
 
 These problems appeared after updating both Discord.js (to v13.2.0) and Node.js (to v17.0.1):
 - guildMemberAdd couldn't be triggered for a reason I have yet to find out
 - ``animal.js`` can't parse the link from the "shibe.online" request
 - play.js no longer could execute ``channel.join``
-- ``MessageEmbed`` comes back as undefined (``8ball.js``)
 
 #### How to build a new module into Buh
 I am currently building up two filters to prevent NSFW and Admin-only commands from being executed by regulars. In the meantime, I am using a regular ``module.exports`` command wrapper, with a "help" property.
