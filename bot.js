@@ -94,7 +94,7 @@ for (const file of events) {
 
 /* Profile settings */
 client.on('ready', c => {
-  client.user.setActivity("\|\| Use the prefix \""+config.prefix+"\"", { type: 'PLAYING' })
+  client.user.setActivity("WORK IN PROGRESS \|\| Use the prefix \""+config.prefix+"\"", { type: 'PLAYING' })
 })
 
 /* Client.on actions */
