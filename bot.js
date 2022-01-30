@@ -1,36 +1,36 @@
 const {Client,Intents} = require("discord.js");
-const klawSync = require('klaw-sync')
-const path = require('path')
-const decache = require('decache')
-const chalk = require('chalk')
-const open = require('bopen')
-const config = require("./config.json")
-const reaction = require('discordjs-reaction-role')
-const fs = require('fs') /* Just for the event wrapper */
+const klawSync = require('klaw-sync');
+const path = require('path');
+const decache = require('decache');
+const chalk = require('chalk');
+const open = require('bopen');
+const config = require("./config.json");
+const reaction = require('discordjs-reaction-role');
+const fs = require('fs'); /* Just for the event wrapper */
 
 /* Notices for the command chart*/
-const success = chalk.black.bgGreen("SUCCESS") + " "
-const failure = chalk.black.bgRed("FAILURE") + " "
-const error = chalk.black.bgYellow("ERROR") + " "
+const success = chalk.black.bgGreen("SUCCESS") + " ";
+const failure = chalk.black.bgRed("FAILURE") + " ";
+const error = chalk.black.bgYellow("ERROR") + " ";
 
 const cmdsDir = path.resolve(__dirname, config.comdir)
 const cmds = new Map(klawSync(cmdsDir, {nodir: true})
   .map(({path: filepath}) => [
     path.basename(filepath, '.js'),
     require(filepath)
-]))
+]));
 cmds.set('help', {
   action(msg, args) {
     msg.channel.send(cmds.get(args)?.help ?? "Please be more specific or ask about another command. Use \"!help\" with a command you\'d like to know more about. <:buh:765953291535908897> <:nice:771120085896265769>")
   },
   help :"You already know how to use this lol"
-})
+});
 cmds.set('commands',{
   action(msg,args){
     msg.channel.send('```\n'+[...cmds.keys()].map(x=>`!${x}`).join('\n')+'\n```');
   },
   help :"It\'s a command list, dummy."
-})
+});
 cmds.set('reload',{
   action(client,msg){
     if(msg.guild.roles.cache.find(config.admin)) { /*CAN'T READ PROPERTY OF 'ROLES' OF UNDEFINED go fuck yourself*/
@@ -41,13 +41,13 @@ cmds.set('reload',{
     }
   },
   help:"Reloads commands. (Work in progress)"
-})
+});
 cmds.set('prefix',{
   action(msg,client) {
     msg.channel.send("Prefix set as ``"+ config.prefix +"``.")
   },
   help :"Tells you the prefix."
-})
+});
 cmds.set('die',{
     action(msg){
       if(msg.guild.roles.cache.find(config.admin)) {
@@ -57,13 +57,13 @@ cmds.set('die',{
       }
     },
     help :"Kills the bot. (Admin Only)"
-})
+});
 const runcmd = (cmd, msg, args) => {
-  const fn = cmds.get(cmd)
+  const fn = cmds.get(cmd);
   if (fn) fn.action(msg, args)
-  else console.error("User attempted to execute", cmd)
-}
-const yeet = x => {throw x;}
+  else console.error("User attempted to execute", cmd);
+};
+const yeet = x => {throw x;};
 /*cmds.set('loop', {
   action(msg, args) {
     const matches = /(?<times>\d+)\s+(?<cmd>\w+) ?(?<args>.*)/.exec(args) ?? yeet(new Error('malformed tho'))
@@ -72,7 +72,7 @@ const yeet = x => {throw x;}
   },
   help: 'reepeetes a command liek `!loop <times> <cmd> [...<arguments>]` lal'
 })*/
-console.log(success + 'Loaded commands: \n' + [...cmds.keys()].map(x=>`  -${x}`).join('\n'))
+console.log(success + 'Loaded commands: \n' + [...cmds.keys()].map(x=>`  -${x}`).join('\n'));
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -96,19 +96,19 @@ for (const file of events) {
 /* Profile settings */
 client.on('ready', c => {
   client.user.setActivity("WORK IN PROGRESS \|\| Use the prefix \""+config.prefix+"\"", { type: 'PLAYING' })
-})
+});
 
 /* Client.on actions */
 client.on('messageCreate', msg => {
-  const { content } = msg
+  const { content } = msg;
   //console.log('message', content, msg)
-  if (msg.author.id == client.user.id || !content.startsWith(config.prefix)) return
-  const space = content.indexOf(' ')
-  const split = space === -1 ? content.length : space
-  const cmd = content.slice(1, split)
-  const args = content.slice(split + 1)
-  runcmd(cmd, msg, args)
-})
+  if (msg.author.id == client.user.id || !content.startsWith(config.prefix)) return;
+  const space = content.indexOf(' ');
+  const split = space === -1 ? content.length : space;
+  const cmd = content.slice(1, split);
+  const args = content.slice(split + 1);
+  runcmd(cmd, msg, args);
+});
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 for (const file of eventFiles) {
@@ -118,10 +118,10 @@ for (const file of eventFiles) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
 		client.on(event.name, (...args) => event.execute(...args));
-	}
-}
+	};
+};
 
 // Enable this command when you release the code to the public
 //open("manual/introduction.html")
-console.log(success + "Currently working.")
-client.login(config.dtoken)
+console.log(success + "Currently working.");
+client.login(config.dtoken);
