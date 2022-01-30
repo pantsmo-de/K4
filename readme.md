@@ -1,7 +1,12 @@
 ## __**Welcome to Buh - we won't do NFTs here**__
-Started as a project named Kitty under a server (Loner Campfire, no longer exists) which I previously modded with my friends, **Buh** is meant to be a sort-of "operational baseline" for Discord bots, off which you can base your bot by adding more modules. It's also my attempt at building the ultimate Discord bot for gamers, cryptobros, weebs and casual Discord users alike, to replace cashcow bots such as Mee6 and Tatsumaki. So my "bot framework" excuse may be redundant.
+Started as a project named Kitty under a server (Loner Campfire, no longer exists) which I previously modded with my friends, **Buh** is meant to be a sort-of "operational baseline" for Discord bots, off which you can base your bot by adding more modules. It's also my attempt at building the ultimate Discord bot for gamers, weebs and casual Discord users alike, to replace cashcow bots such as Mee6 and Tatsumaki. So my "bot framework" excuse may be redundant.
 
 The name "Buh" comes from an otonomapeia of when you try to say something, but you just give up thinking of anything. At least, that's what it is to me. Buh.
+
+## **Why use Buh?**
+- One Discord bot looks better on a server than five, like jesus christ.
+- This bot doesn't do NFTs.
+- ???
 
 ## **Help needed**
 These are general problems that I can't figure out a solution to, because I clearly haven't coded enough, and I am a stupid boy:
