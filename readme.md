@@ -42,6 +42,7 @@ cmds.set('help', {
 #### Special thanks to contributors:
 - Ratvibe - helped create the original iterations of Buh with me
 - Mihail - crafted the command file search function with klaw-sync, and made sure I felt dumb every now and then
+- Firefish - helped fix the embed issue in bonk.js
 
 ## **Self-hosting**
 #### What to know?
