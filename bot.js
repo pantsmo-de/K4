@@ -5,6 +5,7 @@ const decache = require('decache')
 const chalk = require('chalk')
 const open = require('bopen')
 const config = require("./config.json")
+const reaction = require('discordjs-reaction-role')
 const fs = require('fs') /* Just for the event wrapper */
 
 /* Notices for the command chart*/
