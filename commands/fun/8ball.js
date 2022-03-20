@@ -22,7 +22,7 @@ module.exports = {
       .setAuthor('Buh','https://cdn.discordapp.com/emojis/765953291535908897.png', 'https://discord.gg/Zmm6Rpt')
       .setDescription('**'+question+'**\n'+answers[Math.floor(Math.random()*answers.length)])
     if(question != "undefined") {
-      msg.channel.send(ball)
+      msg.channel.send({ embeds: [ball] })
     }else{
       console.log("Ask me a question first!")
     }
